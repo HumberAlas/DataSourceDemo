@@ -39,8 +39,8 @@
             System.Windows.Forms.Label countryLabel;
             System.Windows.Forms.Label phoneLabel;
             System.Windows.Forms.Label faxLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ejemploConexion));
             System.Windows.Forms.Label label1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ejemploConexion));
             this.northwindDataSet = new DataSourceDemo.NorthwindDataSet();
             this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customersTableAdapter = new DataSourceDemo.NorthwindDataSetTableAdapters.CustomersTableAdapter();
@@ -69,6 +69,8 @@
             this.phoneTextBox = new System.Windows.Forms.TextBox();
             this.faxTextBox = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.cajaTextoID = new System.Windows.Forms.ToolStripTextBox();
             companyNameLabel = new System.Windows.Forms.Label();
             contactNameLabel = new System.Windows.Forms.Label();
             contactTitleLabel = new System.Windows.Forms.Label();
@@ -176,6 +178,16 @@
             faxLabel.TabIndex = 21;
             faxLabel.Text = "Fax:";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(438, 114);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(80, 16);
+            label1.TabIndex = 23;
+            label1.Text = "CustomerID:";
+            label1.Click += new System.EventHandler(this.label1_Click);
+            // 
             // northwindDataSet
             // 
             this.northwindDataSet.DataSetName = "NorthwindDataSet";
@@ -215,7 +227,8 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.customersBindingNavigatorSaveItem});
+            this.customersBindingNavigatorSaveItem,
+            this.cajaTextoID});
             this.customersBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.customersBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.customersBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -412,16 +425,6 @@
             this.faxTextBox.TabIndex = 22;
             this.faxTextBox.Text = "16";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(438, 114);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(80, 16);
-            label1.TabIndex = 23;
-            label1.Text = "CustomerID:";
-            label1.Click += new System.EventHandler(this.label1_Click);
-            // 
             // textBox1
             // 
             this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customersBindingSource, "CustomerID", true));
@@ -431,11 +434,29 @@
             this.textBox1.TabIndex = 24;
             this.textBox1.Text = "178";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(209, 213);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cajaTextoID
+            // 
+            this.cajaTextoID.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.cajaTextoID.Name = "cajaTextoID";
+            this.cajaTextoID.Size = new System.Drawing.Size(100, 27);
+            this.cajaTextoID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.toolStripTextBox1_KeyPress);
+            // 
             // ejemploConexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(label1);
             this.Controls.Add(companyNameLabel);
@@ -502,5 +523,7 @@
         private System.Windows.Forms.TextBox phoneTextBox;
         private System.Windows.Forms.TextBox faxTextBox;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ToolStripTextBox cajaTextoID;
     }
 }
